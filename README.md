@@ -4,10 +4,14 @@ This project applies a sequence of computer vision techniques to detect and extr
 ## Requirements
 
 - Install OpenCV:
+```
 pip install opencv-python
+```
 
 - Install EasyOCR:
+```
 pip install easyocr
+```
 
 ## Functionality
 
