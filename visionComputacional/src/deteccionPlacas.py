@@ -13,7 +13,7 @@ images = [
 reader = easyocr.Reader(['es', 'en'])
 
 #Does all the plate processing
-def get_plate(plate_details,plate_number):
+def get_plate(plate_details, plate_number):
 
   #Read the image
   plate = cv.imread(plate_details["path"])
@@ -30,19 +30,19 @@ def get_plate(plate_details,plate_number):
 
   #Applies a border detector
   edges = cv.Canny(plate, plate_details["canny_lower"], plate_details["canny_upper"])
-  cv.imshow(f"Plate {plate_number} borders",edges)
+  cv.imshow(f"Plate {plate_number} borders", edges)
 
   #Plate number detection text with ocr
   results = reader.readtext(plate)
   text = ""
   for detected_text in results:
     text += detected_text[1]+"\n"
-  print(f"\n Plate {plate_number} detected text: ",text)
+  print(f"\n Plate {plate_number} detected text: ", text)
 
   #Closes the 2 shown windows when any key is pressed
   cv.waitKey(0)
   cv.destroyAllWindows()
 
 #Loop to process all the plates
-for plate_number,plate_details in enumerate(images,start=1):
-  get_plate(plate_details,plate_number)
+for plate_number, plate_details in enumerate(images,start=1):
+  get_plate(plate_details, plate_number)
