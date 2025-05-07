@@ -18,7 +18,7 @@ def get_plate(plate_details,plate_number):
   #Read the image
   plate = cv.imread(plate_details["path"])
   if plate is None:
-    print(f"No se pudo cargar la imagen: {plate_details['path']}")
+    print(f"Image not found: {plate_details['path']}")
     return
 
   #Changes the image colors to a gray scale
