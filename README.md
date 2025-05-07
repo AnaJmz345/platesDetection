@@ -24,5 +24,6 @@ pip install easyocr
 ## Execution
 
 Run the script from your terminal using:
-
+```
 python -u "path in which you downloaded the repository/deteccionPlacas.py" 
+```
